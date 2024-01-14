@@ -1,0 +1,15 @@
+# Sample YAML Configuration
+
+server:
+  host: localhost
+  port: 8080
+
+logging:
+  level: info
+  file_path: /var/log/my_app.log
+
+features:
+  - feature1
+  - feature2
+  - feature3
+
