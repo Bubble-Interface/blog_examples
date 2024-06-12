@@ -1,0 +1,26 @@
+version: '3.3'
+
+services:
+  web:
+    build: ./lib_manager
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./lib_manager/:/usr/src/lib_manager/
+    ports:
+      - 8000:8000
+    env_file:
+      - ./.env.dev
+  
+  db:
+    image: postgres:15
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_DB=lib_manager
+
+volumes:
+  postgres_data:

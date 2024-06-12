@@ -9,6 +9,7 @@ packages = [{include = "mat_view"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 django = "^5.0.3"
+psycopg = "^3.1.19"
 
 
 [build-system]
